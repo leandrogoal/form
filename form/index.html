@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Validador de Formulário Seguro</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center vh-100">
+        <div class="row w-100">
+            <div class="col-md-6 text-center d-none d-md-block">
+                <img src="images/financial_data.png" alt="Finance Image" class="img-fluid" />
+            </div>
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">Crie uma conta</h1>
+                <form method="POST" action="cadastro.php" class="b7validator" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Seu nome</label>
+                        <input type="text" id="name" name="name" class="form-control" data-rules="required|min=2" autocomplete="off" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Seu e-mail</label>
+                        <input type="email" id="email" name="email" class="form-control" data-rules="required|email" autocomplete="off" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm_email" class="form-label">Confirme seu e-mail</label>
+                        <input type="email" id="confirm_email" name="confirm_email" class="form-control" data-rules="required|match=email" autocomplete="off" required />
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <label for="password" class="form-label">Sua senha</label>
+                        <input type="password" id="password" name="password" class="form-control" data-rules="required|min=4" required />
+                        <button type="button" class="btn btn-link position-absolute top-50 end-0 translate-middle-y toggle-password" data-target="password">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <label for="confirm_password" class="form-label">Confirme sua senha</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control" data-rules="required|match=password" required />
+                        <button type="button" class="btn btn-link position-absolute top-50 end-0 translate-middle-y toggle-password" data-target="confirm_password">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </div>
+                </form>
+                <p class="text-center mt-3">
+                    Já tem uma conta? <a href="login.php">Faça o Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
